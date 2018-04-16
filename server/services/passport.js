@@ -23,18 +23,16 @@ passport.use(
       callbackURL: '/auth/google/callback',
       proxy: true
     },
-    (accessToken, refreshToken, profile, done) => {
-      Guru.findOne({ googleId: profile.id }).then(existingUser => {
-        if (existingUser) {
-          // log them in
-          done(null, existingUser);
-        } else {
-          // Create a new Guru from their Google info
-          new Guru({ googleId: profile.id })
-            .save()
-            .then(guru => done(null, guru));
-        }
-      });
+    async (accessToken, refreshToken, profile, done) => {
+      const existingUser = await Guru.findOne({ googleId: profile.id });
+      if (existingUser) {
+        // log them in
+        return done(null, existingUser);
+      }
+
+      // Create a new Guru from their Google info
+      const guru = await new Guru({ googleId: profile.id }).save();
+      done(null, guru);
     }
   )
 );
