@@ -1,22 +1,31 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
+import { connect } from 'react-redux';
+
+import * as actions from '../actions';
 
 // Components
 import Login from './landing/Login';
-const Header = () => <h2>header</h2>;
-const Schedule = () => <h2>Schedule</h2>;
+import Schedule from './schedule/Schedule';
+const AvailableAppointments = () => <h2>Available Appointments</h2>;
 
-const App = () => {
-  return (
-    <div style={{width: '100%', height: '100%'}}>
-      <BrowserRouter>
-        <div>
-          <Route path="/" component={Login} />
-          <Route path="/schedule" component={Schedule} />
-        </div>
-      </BrowserRouter>
-    </div>
-  );
-};
+class App extends Component {
+  componentDidMount() {
+    this.props.fetchUser();
+  }
 
-export default App;
+  render() {
+    return (
+      <div>
+        <BrowserRouter>
+          <div>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/schedule" component={Schedule} />
+          </div>
+        </BrowserRouter>
+      </div>
+    );
+  }
+}
+
+export default connect(null, actions)(App);

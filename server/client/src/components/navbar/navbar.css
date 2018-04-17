@@ -1,0 +1,38 @@
+.navbarContainer {
+  height: 60px;
+  background-color: #A5058A;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.logoContainer {
+  padding-left: 15px;
+}
+
+.logoContainer:hover {
+  cursor: pointer;
+}
+
+.submenusContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.menuItem {
+  padding-right: 15px;
+  color: #F3F3F3;
+}
+
+a {
+  text-decoration: none;
+}
+
+.menuItem:hover {
+  cursor: pointer;
+}
