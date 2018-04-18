@@ -7,7 +7,8 @@ import * as actions from '../actions';
 // Components
 import Login from './landing/Login';
 import Schedule from './schedule/Schedule';
-const AvailableAppointments = () => <h2>Available Appointments</h2>;
+import FindJobs from './appointments/FindJobs';
+import CreateAppointment from './appointments/CreateAppointment';
 
 class App extends Component {
   componentDidMount() {
@@ -21,6 +22,8 @@ class App extends Component {
           <div>
             <Route exact path="/" component={Login} />
             <Route exact path="/schedule" component={Schedule} />
+            <Route exact path="/findjobs" component={FindJobs} />
+            <Route exact path="/findjobs/createappointment" component={CreateAppointment} />
           </div>
         </BrowserRouter>
       </div>

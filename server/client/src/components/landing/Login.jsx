@@ -5,16 +5,17 @@ import styles from './login.css';
 
 class Login extends Component {
   state = {
-    googlePressed: false
+    googlePressed: false,
+
   };
 
-  // componentDidMount() {
-  //   console.log('running it');
-  //   if (this.props.auth) {
-  //     console.log('you are logged in', this.props.auth);
-  //     window.location('/appointments');
-  //   }
-  // }
+  componentDidUpdate() {
+    console.log('running it');
+    if (this.props.auth) {
+      console.log('you are logged in', this.props.auth);
+      window.location = '/schedule';
+    }
+  }
 
   login() {
     this.setState({
