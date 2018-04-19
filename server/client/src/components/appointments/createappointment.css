@@ -1,0 +1,45 @@
+
+.formHolderContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.createFormContainer {
+  display: flex;
+  flex-direction: column;
+  max-width: 500px;
+}
+
+.createFormContainer h1 {
+  text-align: center;
+}
+
+.formContainer {
+  text-align: left;
+}
+
+.submit {
+  margin-top: 15px;
+}
+
+/* Input CSS */
+
+.inputContainer {
+  padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.inputLabel {
+  padding-bottom: 5px;
+  font-size: .8em;
+  color: #888888;
+}
+
+.inputStyle {
+  border-style: none;
+  border-bottom-style: solid;
+  border-bottom-width: .5px;
+  font-size: 1em;
+}

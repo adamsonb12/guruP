@@ -5,13 +5,16 @@ import styles from './createappointment.css';
 import AppointmentForm from './AppointmentForm';
 
 class CreateAppointment extends Component {
-
   render() {
     return (
       <div className="scheduleContainer">
         <Navbar />
-        <h1>Create a New Appointment</h1>
-        <AppointmentForm />
+        <div className="formHolderContainer">
+          <div className="createFormContainer">
+            <h1>Create a New Appointment</h1>
+            <AppointmentForm />
+          </div>
+        </div>
       </div>
     );
   }

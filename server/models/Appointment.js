@@ -11,7 +11,7 @@ const appointmentSchema = new Schema({
   dateScheduled: Date,
   price: Number,
   locationAddress: { lineOne: String, lineTwo: String, city: String, state: String, zip: String },
-  rooms: [RoomSchema],
+  // rooms: [RoomSchema],
   completed: { type: Boolean, default: false }
   // assignedEmployeeIDs: [String]
 });

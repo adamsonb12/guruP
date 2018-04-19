@@ -9,8 +9,8 @@ module.exports = app => {
       customerName,
       startTime,
       price,
-      locationAddress,
-      rooms
+      locationAddress
+      // rooms
     } = req.body;
 
     const appointment = new Appointment({
@@ -18,9 +18,9 @@ module.exports = app => {
       _guru: req.user.id,
       startTime,
       dateScheduled: Date.now(),
-      prive,
-      locationAddress,
-      rooms: rooms.map(room => ({ roomName, roomType, whiteGlove, notes }))
+      price,
+      locationAddress
+      // rooms: rooms.map(room => ({ roomName, roomType, whiteGlove, notes }))
     });
 
     try {
